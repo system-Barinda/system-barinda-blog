@@ -31,7 +31,7 @@ export default function Hero() {
         {/* Category / Badge */}
         <div className="mb-6 z-10">
           <span className="rounded-full border border-white/20 bg-white/10 px-5 py-2.5 text-sm font-semibold tracking-wide backdrop-blur-md">
-            🚀 Software Engineering Blog
+            Software Engineering
           </span>
         </div>
 
