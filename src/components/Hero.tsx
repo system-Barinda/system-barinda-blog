@@ -18,11 +18,11 @@ export default function Hero() {
       {/* GSAP Particle Name + Background Grid Canvas */}
       <HeroBackground />
 
-      <div className="relative mx-auto flex min-h-[100vh] max-w-7xl flex-col items-center justify-center px-6 pt-12 pb-16 text-center">
-        {/* Dark Glass Backdrop Box around the Particle Name (Height tuned to fit the name) */}
-        <div className="pointer-events-none mb-10 h-28 w-full max-w-4xl rounded-2xl border border-white/10 bg-slate-950/40 shadow-2xl backdrop-blur-md" />
+      <div className="relative mx-auto flex min-h-[100vh] max-w-7xl flex-col items-center justify-center px-6 pt-10 pb-16 text-center">
+        {/* Crisp Dark Display Container (No backdrop blur so particles stay 100% sharp) */}
+        <div className="pointer-events-none mb-8 h-24 w-full max-w-4xl rounded-xl border border-slate-700/80 bg-slate-950/90 shadow-2xl z-10" />
 
-        {/* Category / Badge (Placed safely below the particle name box) */}
+        {/* Category / Badge */}
         <div className="mb-6 z-10">
           <span className="rounded-full border border-white/20 bg-white/10 px-5 py-2.5 text-sm font-semibold tracking-wide backdrop-blur-md">
             🚀 Software Engineering Blog
