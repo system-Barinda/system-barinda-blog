@@ -18,8 +18,11 @@ export default function Hero() {
       {/* GSAP Particle Name + Background Grid Canvas */}
       <HeroBackground />
 
-      <div className="relative mx-auto flex min-h-[100vh] max-w-7xl flex-col items-center justify-center px-6 pt-36 pb-16 text-center">
-        {/* Category / Badge */}
+      <div className="relative mx-auto flex min-h-[100vh] max-w-7xl flex-col items-center justify-center px-6 pt-12 pb-16 text-center">
+        {/* Dark Glass Backdrop Box around the Particle Name (Height tuned to fit the name) */}
+        <div className="pointer-events-none mb-10 h-28 w-full max-w-4xl rounded-2xl border border-white/10 bg-slate-950/40 shadow-2xl backdrop-blur-md" />
+
+        {/* Category / Badge (Placed safely below the particle name box) */}
         <div className="mb-6 z-10">
           <span className="rounded-full border border-white/20 bg-white/10 px-5 py-2.5 text-sm font-semibold tracking-wide backdrop-blur-md">
             🚀 Software Engineering Blog
@@ -27,7 +30,7 @@ export default function Hero() {
         </div>
 
         {/* Hero Title Area */}
-        <h1 className="mt-4 max-w-4xl text-4xl font-extrabold tracking-tight text-white md:text-6xl lg:text-7xl z-10">
+        <h1 className="mt-2 max-w-4xl text-4xl font-extrabold tracking-tight text-white md:text-6xl lg:text-7xl z-10">
           Build Software
           <br />
           <span className="text-white/90">One Line at a Time</span>
