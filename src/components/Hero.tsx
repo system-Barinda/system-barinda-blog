@@ -14,46 +14,55 @@ const skills = [
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden bg-[#4285f4] text-white">
+      {/* Background graphics/decorations overlay */}
       <HeroBackground />
 
-      <div className="relative mx-auto flex min-h-[90vh] max-w-7xl flex-col items-center justify-center gap-16 px-6 py-24 lg:flex-row">
-        <div className="max-w-2xl">
-          <span className="rounded-full border border-blue-600 bg-blue-600/10 px-4 py-2 text-sm text-blue-400">
+      <div className="relative mx-auto flex min-h-[90vh] max-w-7xl flex-col items-center justify-center px-6 py-16 text-center">
+        {/* Category / Badge */}
+        <div className="mb-6">
+          <span className="rounded-full bg-white/10 px-4 py-2 text-sm font-medium backdrop-blur-md">
             🚀 Software Engineering Blog
           </span>
-
-          <h1 className="mt-8 text-5xl font-extrabold leading-tight text-white md:text-7xl">
-            Build Software
-            <br />
-            <span className="text-blue-500">One Line at a Time</span>
-          </h1>
-
-          <p className="mt-8 text-lg leading-8 text-slate-400">
-            Sharing tutorials, backend development, frontend engineering, system
-            design, DevOps, AI, Docker, and everything I learn while building
-            real-world applications.
-          </p>
-
-          <div className="mt-10 flex flex-wrap gap-4">
-            <button className="flex items-center gap-2 rounded-xl bg-blue-600 px-6 py-4 font-semibold text-white transition hover:bg-blue-500">
-              Explore Articles
-              <ArrowRight size={18} />
-            </button>
-
-            <button className="rounded-xl border border-slate-700 px-6 py-4 text-white transition hover:border-blue-500">
-              View Projects
-            </button>
-          </div>
-
-          <div className="mt-12 flex flex-wrap gap-3">
-            {skills.map((skill) => (
-              <FloatingBadge key={skill} title={skill} />
-            ))}
-          </div>
         </div>
 
-        <CodeWindow />
+        {/* Main Heading */}
+        <h1 className="max-w-4xl text-4xl font-extrabold tracking-tight text-white md:text-6xl lg:text-7xl">
+          Build Software
+          <br />
+          <span className="text-white/90">One Line at a Time</span>
+        </h1>
+
+        {/* Subtitle */}
+        <p className="mt-6 max-w-2xl text-lg font-light text-blue-100 md:text-xl">
+          Sharing tutorials, backend development, frontend engineering, system
+          design, DevOps, AI, Docker, and everything I learn while building
+          real-world applications.
+        </p>
+
+        {/* Call to Action Buttons */}
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+          <button className="flex items-center gap-2 rounded-md bg-[#ff6600] px-8 py-3.5 font-bold text-white shadow-md transition hover:bg-[#e65c00]">
+            Explore Articles
+            <ArrowRight size={18} />
+          </button>
+
+          <button className="rounded-md border border-white/40 bg-white/10 px-8 py-3.5 font-semibold text-white transition hover:bg-white/20">
+            View Projects
+          </button>
+        </div>
+
+        {/* Skills List */}
+        <div className="mt-10 flex flex-wrap justify-center gap-3">
+          {skills.map((skill) => (
+            <FloatingBadge key={skill} title={skill} />
+          ))}
+        </div>
+
+        {/* Floating/Embedded Preview Component */}
+        <div className="mt-16 w-full max-w-4xl drop-shadow-2xl">
+          <CodeWindow />
+        </div>
       </div>
     </section>
   );
