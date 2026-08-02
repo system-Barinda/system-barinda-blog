@@ -67,7 +67,7 @@ export default function HeroBackground() {
 
       if (textCtx) {
         // Dynamic font sizing tuned for sharp legibility
-        const fontSize = Math.min(Math.max(width * 0.032, 20), 38);
+        const fontSize = Math.min(Math.max(width * 0.132, 70), 68);
         textCtx.font = `900 ${fontSize}px "Courier New", monospace, sans-serif`;
         textCtx.fillStyle = "#ffffff";
         textCtx.textAlign = "center";
