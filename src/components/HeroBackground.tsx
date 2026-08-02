@@ -16,25 +16,13 @@ export default function HeroBackground() {
     let height = (canvas.height =
       canvas.parentElement?.clientHeight || window.innerHeight);
 
-    const handleResize = () => {
-      if (!canvas) return;
-      width = canvas.width =
-        canvas.parentElement?.clientWidth || window.innerWidth;
-      height = canvas.height =
-        canvas.parentElement?.clientHeight || window.innerHeight;
-      initGrid();
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    // Color palette for dots inspired by your screenshot gradient
     const colors = [
       "#00FF66", // Glowing Green
       "#00E5FF", // Cyan
       "#FFD700", // Bright Yellow
       "#FF007F", // Neon Pink
-      "#4285F4", // Electric Blue
-      "#FF6600", // Accent Orange
+      "#FFFFFF", // Pure White
+      "#FF6600", // Vivid Orange
     ];
 
     interface Dot {
@@ -43,7 +31,6 @@ export default function HeroBackground() {
       baseX: number;
       baseY: number;
       size: number;
-      baseSize: number;
       color: string;
       alpha: number;
       isName: boolean;
@@ -51,82 +38,95 @@ export default function HeroBackground() {
 
     let dots: Dot[] = [];
 
-    const initGrid = () => {
+    const initCanvas = () => {
       dots = [];
-      const spacing = 32; // Distance between grid dots
 
-      // 1. Off-screen canvas to sample text pixel positions
+      // 1. Draw static background dot grid
+      const gridSpacing = 28;
+      for (let y = gridSpacing; y < height; y += gridSpacing) {
+        for (let x = gridSpacing; x < width; x += gridSpacing) {
+          dots.push({
+            x,
+            y,
+            baseX: x,
+            baseY: y,
+            size: 2,
+            color: "#ffffff",
+            alpha: 0.18,
+            isName: false,
+          });
+        }
+      }
+
+      // 2. Sample pixel positions for the name
       const textCanvas = document.createElement("canvas");
       textCanvas.width = width;
       textCanvas.height = height;
       const textCtx = textCanvas.getContext("2d");
 
       if (textCtx) {
-        textCtx.fillStyle = "#ffffff";
-        // Dynamic font size responsive to screen width
-        const fontSize = Math.min(width * 0.055, 64);
+        // High resolution sizing relative to viewport width
+        const fontSize = Math.min(Math.max(width * 0.045, 24), 54);
         textCtx.font = `900 ${fontSize}px sans-serif`;
+        textCtx.fillStyle = "#ffffff";
         textCtx.textAlign = "center";
         textCtx.textBaseline = "middle";
 
-        // Draw name in upper center of hero area
-        const nameY = height * 0.28;
+        // Position name near the top clear area (12% of hero height)
+        const nameY = height * 0.12;
         textCtx.fillText("SYSTEM SYLVERE BARINDA", width / 2, nameY);
 
         const imgData = textCtx.getImageData(0, 0, width, height).data;
 
-        // 2. Generate Grid of Dots
-        for (let y = spacing; y < height; y += spacing) {
-          for (let x = spacing; x < width; x += spacing) {
-            // Check if this grid coordinate lands on the rendered text
-            const pixelIndex = (Math.floor(y) * width + Math.floor(x)) * 4;
-            const isTextPixel = imgData[pixelIndex + 3] > 128; // Alpha threshold
+        // Fine pixel sampling for sharp letter outlines
+        const sampleStep = width < 768 ? 6 : 8;
 
-            const color = colors[Math.floor(Math.random() * colors.length)];
-
-            dots.push({
-              x,
-              y,
-              baseX: x,
-              baseY: y,
-              size: isTextPixel ? 5.5 : 3.5,
-              baseSize: isTextPixel ? 5.5 : 3.5,
-              color: isTextPixel ? color : "#8ab4f8",
-              alpha: isTextPixel ? 0.95 : 0.35,
-              isName: isTextPixel,
-            });
+        for (let y = 0; y < height; y += sampleStep) {
+          for (let x = 0; x < width; x += sampleStep) {
+            const index = (Math.floor(y) * width + Math.floor(x)) * 4;
+            if (imgData[index + 3] > 128) {
+              const color = colors[Math.floor(Math.random() * colors.length)];
+              dots.push({
+                x,
+                y,
+                baseX: x,
+                baseY: y,
+                size: 2.8,
+                color,
+                alpha: 0.95,
+                isName: true,
+              });
+            }
           }
         }
       }
 
-      // 3. GSAP Animations for Name Dots vs Grid Dots
+      // 3. Apply GSAP animations to name particles
       dots.forEach((dot) => {
         if (dot.isName) {
-          // Floating & scaling pulse for text dots
           gsap.to(dot, {
-            size: dot.baseSize + Math.random() * 2.5,
+            size: 4,
             alpha: 1,
-            duration: 1.5 + Math.random() * 1.5,
+            duration: 1 + Math.random() * 1.5,
             repeat: -1,
             yoyo: true,
             ease: "sine.easeInOut",
-            delay: Math.random() * 2,
+            delay: Math.random() * 1.5,
           });
 
-          // Slight floating movement
           gsap.to(dot, {
-            y: dot.baseY + (Math.random() * 6 - 3),
-            x: dot.baseX + (Math.random() * 4 - 2),
+            y: dot.baseY + (Math.random() * 4 - 2),
+            x: dot.baseX + (Math.random() * 2 - 1),
             duration: 2 + Math.random() * 2,
             repeat: -1,
             yoyo: true,
             ease: "sine.easeInOut",
           });
         } else {
-          // Subtle ambient pulse for outer grid dots
+          // Subtle pulse for standard background grid
           gsap.to(dot, {
-            alpha: 0.15 + Math.random() * 0.3,
-            duration: 2 + Math.random() * 3,
+            alpha: 0.08 + Math.random() * 0.2,
+            duration: 3 + Math.random() * 2,
             repeat: -1,
             yoyo: true,
             ease: "sine.easeInOut",
@@ -136,7 +136,16 @@ export default function HeroBackground() {
       });
     };
 
-    initGrid();
+    const handleResize = () => {
+      width = canvas.width =
+        canvas.parentElement?.clientWidth || window.innerWidth;
+      height = canvas.height =
+        canvas.parentElement?.clientHeight || window.innerHeight;
+      initCanvas();
+    };
+
+    window.addEventListener("resize", handleResize);
+    initCanvas();
 
     // 4. Render loop
     const render = () => {
@@ -146,16 +155,15 @@ export default function HeroBackground() {
         ctx.save();
         ctx.globalAlpha = dot.alpha;
         ctx.fillStyle = dot.color;
+
+        if (dot.isName) {
+          ctx.shadowBlur = 8;
+          ctx.shadowColor = dot.color;
+        }
+
         ctx.beginPath();
         ctx.arc(dot.x, dot.y, dot.size, 0, Math.PI * 2);
         ctx.fill();
-
-        // Extra glow effect for dots forming the name
-        if (dot.isName) {
-          ctx.shadowBlur = 10;
-          ctx.shadowColor = dot.color;
-          ctx.fill();
-        }
         ctx.restore();
       });
 
@@ -171,12 +179,11 @@ export default function HeroBackground() {
   }, []);
 
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      {/* Background ambient glowing blurs */}
-      <div className="absolute left-1/4 top-10 h-80 w-80 rounded-full bg-blue-500/20 blur-[130px]" />
-      <div className="absolute right-1/4 bottom-10 h-80 w-80 rounded-full bg-emerald-400/20 blur-[130px]" />
+    <div className="absolute inset-0 pointer-events-none overflow-hidden">
+      {/* Soft background ambient blurs */}
+      <div className="absolute left-1/3 top-5 h-72 w-72 rounded-full bg-blue-400/20 blur-[120px]" />
+      <div className="absolute right-1/4 top-20 h-72 w-72 rounded-full bg-emerald-400/20 blur-[120px]" />
 
-      {/* GSAP Canvas Layer */}
       <canvas
         ref={canvasRef}
         className="absolute inset-0 block h-full w-full"

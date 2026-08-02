@@ -15,26 +15,26 @@ const skills = [
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-[#4285f4] text-white">
-      {/* GSAP Dot Grid + Animated Name Canvas */}
+      {/* GSAP Particle Name + Background Grid Canvas */}
       <HeroBackground />
 
-      <div className="relative mx-auto flex min-h-[95vh] max-w-7xl flex-col items-center justify-center px-6 pt-24 pb-16 text-center">
+      <div className="relative mx-auto flex min-h-[100vh] max-w-7xl flex-col items-center justify-center px-6 pt-36 pb-16 text-center">
         {/* Category / Badge */}
-        <div className="mb-8">
+        <div className="mb-6 z-10">
           <span className="rounded-full border border-white/20 bg-white/10 px-5 py-2.5 text-sm font-semibold tracking-wide backdrop-blur-md">
             🚀 Software Engineering Blog
           </span>
         </div>
 
         {/* Hero Title Area */}
-        <h1 className="mt-12 max-w-4xl text-4xl font-extrabold tracking-tight text-white md:text-6xl lg:text-7xl">
+        <h1 className="mt-4 max-w-4xl text-4xl font-extrabold tracking-tight text-white md:text-6xl lg:text-7xl z-10">
           Build Software
           <br />
           <span className="text-white/90">One Line at a Time</span>
         </h1>
 
         {/* Subtitle */}
-        <p className="mt-6 max-w-2xl text-lg font-light text-blue-100 md:text-xl">
+        <p className="mt-6 max-w-2xl text-lg font-light text-blue-100 md:text-xl z-10">
           Sharing tutorials, backend development, frontend engineering, system
           design, DevOps, AI, Docker, and everything I learn while building
           real-world applications.
