@@ -1,14 +1,11 @@
-import {
-  createBrowserRouter,
-} from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 
 import MainLayout from "./layouts/MainLayout";
+import Home from "./pages/Home";
 
 const EmptyPage = ({ title }: { title: string }) => (
   <section className="flex h-[80vh] items-center justify-center">
-    <h1 className="text-5xl font-bold text-white">
-      {title}
-    </h1>
+    <h1 className="text-5xl font-bold text-white">{title}</h1>
   </section>
 );
 
@@ -19,7 +16,7 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <EmptyPage title="Home" />,
+        element: <Home />,
       },
       {
         path: "blog",

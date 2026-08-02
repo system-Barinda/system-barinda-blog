@@ -26,24 +26,18 @@ export default function Hero() {
           <h1 className="mt-8 text-5xl font-extrabold leading-tight text-white md:text-7xl">
             Build Software
             <br />
-
-            <span className="text-blue-500">
-              One Line at a Time
-            </span>
+            <span className="text-blue-500">One Line at a Time</span>
           </h1>
 
           <p className="mt-8 text-lg leading-8 text-slate-400">
-            Sharing tutorials, backend development,
-            frontend engineering, system design,
-            DevOps, AI, Docker, and everything I
-            learn while building real-world
-            applications.
+            Sharing tutorials, backend development, frontend engineering, system
+            design, DevOps, AI, Docker, and everything I learn while building
+            real-world applications.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4">
             <button className="flex items-center gap-2 rounded-xl bg-blue-600 px-6 py-4 font-semibold text-white transition hover:bg-blue-500">
               Explore Articles
-
               <ArrowRight size={18} />
             </button>
 
@@ -54,10 +48,7 @@ export default function Hero() {
 
           <div className="mt-12 flex flex-wrap gap-3">
             {skills.map((skill) => (
-              <FloatingBadge
-                key={skill}
-                title={skill}
-              />
+              <FloatingBadge key={skill} title={skill} />
             ))}
           </div>
         </div>
