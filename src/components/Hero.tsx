@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { ArrowRight } from "lucide-react";
 import FloatingBadge from "./FloatingBadge";
 import HeroBackground from "./HeroBackground";
@@ -13,14 +14,19 @@ const skills = [
 ];
 
 export default function Hero() {
+  const cardRef = useRef<HTMLDivElement | null>(null);
+
   return (
     <section className="relative overflow-hidden bg-[#4285f4] text-white">
-      {/* GSAP Particle Name + Background Grid Canvas */}
-      <HeroBackground />
+      {/* Particle Canvas synchronized with the display card reference */}
+      <HeroBackground cardRef={cardRef} />
 
-      <div className="relative mx-auto flex min-h-[100vh] max-w-7xl flex-col items-center justify-center px-6 pt-10 pb-16 text-center">
-        {/* Crisp Dark Display Container (No backdrop blur so particles stay 100% sharp) */}
-        <div className="pointer-events-none mb-8 h-24 w-full max-w-4xl rounded-xl border border-slate-700/80 bg-slate-950/90 shadow-2xl z-10" />
+      <div className="relative mx-auto flex min-h-[100vh] max-w-7xl flex-col items-center justify-center px-6 pt-12 pb-16 text-center">
+        {/* Sleek Dark LED Card Display Container */}
+        <div
+          ref={cardRef}
+          className="pointer-events-none mb-8 flex h-20 w-full max-w-4xl items-center justify-center rounded-2xl border border-slate-700/80 bg-slate-950/90 shadow-2xl z-10"
+        />
 
         {/* Category / Badge */}
         <div className="mb-6 z-10">
