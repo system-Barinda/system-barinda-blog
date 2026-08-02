@@ -1,4 +1,5 @@
-import { ArrowUp, Code2, Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { ArrowUp, Code2, Mail } from "lucide-react";
+// import { ArrowUp, Code2, Github, Linkedin, Mail, Twitter } from "lucide-react";
 
 const quickLinks = ["Home", "Blog", "Projects", "About"];
 
@@ -41,21 +42,21 @@ export default function Footer() {
                 href="#"
                 className="rounded-xl border border-slate-700 p-3 text-slate-300 transition hover:border-blue-500 hover:text-blue-500"
               >
-                <Github size={20} />
+                <Mail size={20} />
               </a>
 
               <a
                 href="#"
                 className="rounded-xl border border-slate-700 p-3 text-slate-300 transition hover:border-blue-500 hover:text-blue-500"
               >
-                <Linkedin size={20} />
+                {/* <Linkedin size={20} /> */}
               </a>
 
               <a
                 href="#"
                 className="rounded-xl border border-slate-700 p-3 text-slate-300 transition hover:border-blue-500 hover:text-blue-500"
               >
-                <Twitter size={20} />
+                {/* <Twitter size={20} /> */}
               </a>
 
               <a

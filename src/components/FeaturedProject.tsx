@@ -1,4 +1,4 @@
-import { ArrowRight, ExternalLink, Github, Star } from "lucide-react";
+import { ArrowRight, ExternalLink, Star } from "lucide-react";
 
 const technologies = [
   "React",
@@ -140,7 +140,7 @@ export default function FeaturedProject() {
                   hover:bg-blue-500
                 "
                 >
-                  <Github size={20} />
+                  {/* <Github size={20} /> */}
                   GitHub
                   <ArrowRight size={18} />
                 </button>
