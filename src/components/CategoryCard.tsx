@@ -45,7 +45,9 @@ export default function CategoryCard({ category }: Props) {
 
       <h3 className="mt-6 text-2xl font-bold text-white">{category.title}</h3>
 
-      <p className="mt-4 leading-7 text-slate-400">{category.description}</p>
+      <p className="font-bold mt-4 leading-7 text-slate-600">
+        {category.description}
+      </p>
 
       <div className="mt-6 flex items-center justify-between">
         <span className="text-sm text-slate-500">
