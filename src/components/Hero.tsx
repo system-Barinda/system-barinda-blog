@@ -17,7 +17,7 @@ export default function Hero() {
   const cardRef = useRef<HTMLDivElement | null>(null);
 
   return (
-    <section className="relative overflow-hidden bg-[#4285f4] text-white">
+    <section className="relative overflow-hidden bg-gray-200">
       {/* Particle Canvas synchronized with the display card reference */}
       <HeroBackground cardRef={cardRef} />
 
@@ -36,14 +36,14 @@ export default function Hero() {
         </div>
 
         {/* Hero Title Area */}
-        <h1 className="mt-2 max-w-4xl text-4xl font-extrabold tracking-tight text-white md:text-6xl lg:text-7xl z-10">
+        <h1 className="mt-2 max-w-4xl text-4xl font-extrabold tracking-tight text-gray-600 md:text-6xl lg:text-7xl z-10">
           Build Software
           <br />
-          <span className="text-white/90">One Line at a Time</span>
+          <span className="text-gray-600/90">One Line at a Time</span>
         </h1>
 
         {/* Subtitle */}
-        <p className="mt-6 max-w-2xl text-lg font-light text-blue-100 md:text-xl z-10">
+        <p className="mt-6 max-w-2xl text-lg  text-gray-900 md:text-xl z-10 font-bold">
           Sharing tutorials, backend development, frontend engineering, system
           design, DevOps, AI, Docker, and everything I learn while building
           real-world applications.
@@ -56,7 +56,7 @@ export default function Hero() {
             <ArrowRight size={18} />
           </button>
 
-          <button className="rounded-md border border-white/40 bg-white/10 px-8 py-3.5 font-semibold text-white backdrop-blur-sm transition hover:bg-white/20">
+          <button className="rounded-md border border-white/40 bg-pink-600 px-8 py-3.5 font-semibold text-white  transition hover:bg-white/20">
             View Projects
           </button>
         </div>
