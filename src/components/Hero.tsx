@@ -25,7 +25,7 @@ export default function Hero() {
         {/* Sleek Dark LED Card Display Container */}
         <div
           ref={cardRef}
-          className="pointer-events-none mb-8 flex h-20 w-full max-w-4xl items-center justify-center rounded-2xl border border-slate-700/80 bg-slate-950/90 shadow-2xl z-10"
+          className="pointer-events-none mb-8 flex h-20 w-full max-w-4xl items-center justify-center rounded-2xl  bg-white shadow "
         />
 
         {/* Category / Badge */}
