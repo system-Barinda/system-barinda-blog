@@ -45,11 +45,12 @@ export default function PostCard({ post }: Props) {
         <span
           className="
           rounded-full
-          bg-blue-600/10
+          bg-[#f0bb0c]
           px-3
           py-1
           text-sm
-          text-blue-400
+          text-white
+          font-semibold
         "
         >
           {post.category}
@@ -57,9 +58,9 @@ export default function PostCard({ post }: Props) {
 
         <h3 className="mt-4 text-2xl font-bold text-white">{post.title}</h3>
 
-        <p className="mt-4 leading-7 text-slate-400">{post.description}</p>
+        <p className="mt-4 leading-7 text-slate-100">{post.description}</p>
 
-        <div className="mt-6 flex justify-between text-sm text-slate-500">
+        <div className="mt-6 flex justify-between text-sm text-white">
           <span>{post.readTime}</span>
           <span>{post.date}</span>
         </div>
@@ -70,7 +71,7 @@ export default function PostCard({ post }: Props) {
           flex
           items-center
           gap-2
-          text-blue-400
+          text-[#f0bb0c]
           transition
           hover:gap-3
         "
