@@ -17,15 +17,12 @@ export default function CategoryCard({ category }: Props) {
       className="
       group
       rounded-2xl
-      border
-      border-slate-800
-      bg-slate-900
+      bg-white
       p-8
       transition-all
       duration-300
-      hover:-translate-y-2
-      hover:border-blue-500
-      hover:shadow-xl
+      shadow
+      shadow-gray-500
     "
     >
       <div
@@ -36,10 +33,10 @@ export default function CategoryCard({ category }: Props) {
         items-center
         justify-center
         rounded-xl
-        bg-blue-600/10
-        text-blue-500
+        bg-pink-500
+        text-white
         transition
-        group-hover:bg-blue-600
+        group-hover:bg-[#f0bb0c]
         group-hover:text-white
       "
       >
