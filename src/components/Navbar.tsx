@@ -31,8 +31,8 @@ export default function Navbar() {
       <header
         className={`fixed left-0 top-0 z-40 w-full transition-all duration-300 ${
           scrolled
-            ? "bg-slate-950/90 backdrop-blur-xl border-b border-slate-800"
-            : "bg-transparent"
+            ? "bg-pink-600/90  border-2 border-b border-pink-700"
+            : "bg-pink-500"
         }`}
       >
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
@@ -45,8 +45,8 @@ export default function Navbar() {
                 to={item.path}
                 className={({ isActive }) =>
                   isActive
-                    ? "text-blue-500"
-                    : "text-slate-300 hover:text-white transition"
+                    ? "text-white font-bold text-2xl"
+                    : "text-white hover:text-white transition"
                 }
               >
                 {item.name}
@@ -55,14 +55,11 @@ export default function Navbar() {
           </nav>
 
           <div className="hidden items-center gap-4 md:flex">
-            <button className="rounded-full bg-slate-800 p-3 hover:bg-slate-700">
-              <Search
-                size={18}
-                className="text-slate-300"
-              />
+            <button className="rounded-full bg-white p-3 hover:bg-gray-200 cursor-pointer">
+              <Search size={18} className="text-slate-900" />
             </button>
 
-            <button className="rounded-xl bg-blue-600 px-5 py-3 font-medium text-white transition hover:bg-blue-500">
+            <button className="rounded-xl bg-[#ff6600] px-5 py-3 font-medium text-white transition hover:bg-[#ff6600]/90">
               Subscribe
             </button>
           </div>
@@ -76,10 +73,7 @@ export default function Navbar() {
         </div>
       </header>
 
-      <MobileMenu
-        open={mobile}
-        onClose={() => setMobile(false)}
-      />
+      <MobileMenu open={mobile} onClose={() => setMobile(false)} />
     </>
   );
 }
