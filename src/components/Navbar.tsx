@@ -59,7 +59,7 @@ export default function Navbar() {
               <Search size={18} className="text-slate-900" />
             </button>
 
-            <button className="rounded-xl bg-[#ff6600] px-5 py-3 font-medium text-white transition hover:bg-[#ff6600]/90">
+            <button className="rounded-xl bg-[#f0bb0c] px-5 py-3 font-medium text-white transition hover:bg-[#ff6600]/90">
               Subscribe
             </button>
           </div>
