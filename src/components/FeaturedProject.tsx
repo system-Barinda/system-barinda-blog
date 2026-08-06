@@ -11,16 +11,18 @@ const technologies = [
 
 export default function FeaturedProject() {
   return (
-    <section className="bg-slate-950 py-24">
+    <section className="bg-white py-24">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-16 text-center">
-          <span className="font-semibold text-blue-500">Featured Project</span>
+          <span className=" text-6xl font-semibold text-pink-500">
+            Featured Project
+          </span>
 
-          <h2 className="mt-4 text-5xl font-bold text-white">
+          <h2 className="mt-4 text-4xl font-bold text-green-500">
             Building Real Software
           </h2>
 
-          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-400">
+          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-500">
             Every project is an opportunity to learn something new. Here is one
             of my favorite projects that demonstrates software engineering
             principles, clean architecture, responsive UI and scalable
