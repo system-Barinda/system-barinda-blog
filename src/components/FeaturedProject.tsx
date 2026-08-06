@@ -33,14 +33,14 @@ export default function FeaturedProject() {
         <div
           className="
           overflow-hidden
+          shadow
           rounded-3xl
           border
-          border-slate-800
-          bg-slate-900
+          border-slate-100
+          bg-pink-600
           transition-all
           duration-300
-          hover:border-blue-500
-          hover:shadow-2xl
+          hover:border-gray-100
         "
         >
           <div className="grid lg:grid-cols-2">
@@ -59,7 +59,7 @@ export default function FeaturedProject() {
             {/* Right Side */}
 
             <div className="flex flex-col justify-center p-10">
-              <span className="mb-4 w-fit rounded-full bg-blue-600/10 px-4 py-2 text-sm text-blue-400">
+              <span className="mb-4 w-fit rounded-full bg-[#f0bb0c] px-4 py-2 text-sm text-white font-semibold">
                 Full Stack Project
               </span>
 
@@ -67,7 +67,7 @@ export default function FeaturedProject() {
                 Library Management System
               </h3>
 
-              <p className="mt-6 leading-8 text-slate-400">
+              <p className="mt-6 leading-8 text-gray-100">
                 A modern library management platform built using React,
                 TypeScript, TailwindCSS, Node.js and PostgreSQL. It includes
                 authentication, dashboards, responsive layouts and scalable
@@ -83,12 +83,12 @@ export default function FeaturedProject() {
                     className="
                     rounded-full
                     border
-                    border-slate-700
-                    bg-slate-800
+                    bg-[#f0bb0c]
                     px-4
                     py-2
                     text-sm
-                    text-slate-300
+                    text-white
+                    font-semibold
                   "
                   >
                     {tech}
@@ -102,13 +102,13 @@ export default function FeaturedProject() {
                 <div>
                   <p className="text-3xl font-bold text-white">20+</p>
 
-                  <p className="text-slate-500">Components</p>
+                  <p className="text-white">Components</p>
                 </div>
 
                 <div>
                   <p className="text-3xl font-bold text-white">100%</p>
 
-                  <p className="text-slate-500">Responsive</p>
+                  <p className="text-white">Responsive</p>
                 </div>
 
                 <div>
@@ -120,7 +120,7 @@ export default function FeaturedProject() {
                     5
                   </p>
 
-                  <p className="text-slate-500">Main Features</p>
+                  <p className="text-white">Main Features</p>
                 </div>
               </div>
 
