@@ -2,19 +2,17 @@ import { Mail, Send, Sparkles } from "lucide-react";
 
 export default function Newsletter() {
   return (
-    <section className="bg-slate-950 py-24">
+    <section className="bg-white py-24">
       <div className="mx-auto max-w-7xl px-6">
         <div
           className="
             relative
             overflow-hidden
             rounded-3xl
-            border
-            border-slate-800
             bg-gradient-to-r
-            from-blue-600
-            via-slate-900
-            to-cyan-600
+            from-pink-600
+            via-gray-900
+            to-pink-600
             p-8
             md:p-14
           "
@@ -26,14 +24,14 @@ export default function Newsletter() {
           <div className="relative grid items-center gap-12 lg:grid-cols-2">
             {/* Left */}
             <div>
-              <div className="mb-5 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-white">
+              <div className="mb-5 inline-flex items-center gap-2 rounded-full bg-[#f0bb0c] px-4 py-2 text-white font-semibold">
                 <Sparkles size={18} />
                 Weekly Software Engineering Newsletter
               </div>
 
               <h2 className="text-4xl font-extrabold leading-tight text-white md:text-5xl">
                 Stay Ahead in
-                <span className="block text-cyan-300">
+                <span className="block text-green-800">
                   Software Engineering
                 </span>
               </h2>
@@ -66,14 +64,16 @@ export default function Newsletter() {
             </div>
 
             {/* Right */}
-            <div className="rounded-2xl bg-slate-900/70 p-8 backdrop-blur-md">
+            <div className="rounded-2xl bg-white p-8 backdrop-blur-md">
               <div className="mb-6 flex items-center gap-3">
-                <div className="rounded-xl bg-blue-600 p-3 text-white">
+                <div className="rounded-xl bg-pink-600 p-3 text-white">
                   <Mail size={24} />
                 </div>
 
                 <div>
-                  <h3 className="text-2xl font-bold text-white">Subscribe</h3>
+                  <h3 className="text-2xl font-bold text-green-600">
+                    Subscribe
+                  </h3>
 
                   <p className="text-slate-400">
                     No spam. Unsubscribe anytime.
