@@ -133,13 +133,13 @@ export default function FeaturedProject() {
                   items-center
                   gap-2
                   rounded-xl
-                  bg-blue-600
+                  bg-green-600
                   px-6
                   py-4
                   font-semibold
                   text-white
                   transition
-                  hover:bg-blue-500
+                  hover:bg-green-500
                 "
                 >
                   {/* <Github size={20} /> */}
@@ -153,13 +153,13 @@ export default function FeaturedProject() {
                   items-center
                   gap-2
                   rounded-xl
-                  border
-                  border-slate-700
+                  bg-white
                   px-6
                   py-4
-                  text-white
+                  text-slate-800
                   transition
-                  hover:border-blue-500
+                  font-semibold
+                  hover:cursor-pointer
                 "
                 >
                   <ExternalLink size={20} />
