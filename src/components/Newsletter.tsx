@@ -75,7 +75,7 @@ export default function Newsletter() {
                     Subscribe
                   </h3>
 
-                  <p className="text-slate-400">
+                  <p className="text-slate-600">
                     No spam. Unsubscribe anytime.
                   </p>
                 </div>
@@ -88,16 +88,15 @@ export default function Newsletter() {
                   className="
                     w-full
                     rounded-xl
-                    border
-                    border-slate-700
-                    bg-slate-800
+                    shadow-xl
+                    bg-slate-200
                     px-5
                     py-4
                     text-white
-                    placeholder:text-slate-500
+                    placeholder:text-slate-600
                     outline-none
                     transition
-                    focus:border-blue-500
+                   
                   "
                 />
 
@@ -110,13 +109,13 @@ export default function Newsletter() {
                     justify-center
                     gap-3
                     rounded-xl
-                    bg-blue-600
+                    bg-[#f0bb0c]
                     px-6
                     py-4
                     font-semibold
                     text-white
                     transition
-                    hover:bg-blue-500
+                    hover:bg-[#f0bb0c]
                   "
                 >
                   Subscribe Now
