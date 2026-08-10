@@ -75,14 +75,16 @@ export default function Footer() {
           {/* Quick Links */}
 
           <div>
-            <h3 className="text-xl font-semibold text-white">Quick Links</h3>
+            <h3 className="text-xl font-semibold text-green-500">
+              Quick Links
+            </h3>
 
             <ul className="mt-6 space-y-4">
               {quickLinks.map((link) => (
                 <li key={link}>
                   <a
                     href="#"
-                    className="text-slate-400 transition hover:text-blue-500"
+                    className="text-slate-600 font-semibold transition hover:text-blue-500"
                   >
                     {link}
                   </a>
@@ -94,14 +96,14 @@ export default function Footer() {
           {/* Categories */}
 
           <div>
-            <h3 className="text-xl font-semibold text-white">Categories</h3>
+            <h3 className="text-xl font-semibold text-green-500">Categories</h3>
 
             <ul className="mt-6 space-y-4">
               {categories.map((item) => (
                 <li key={item}>
                   <a
                     href="#"
-                    className="text-slate-400 transition hover:text-blue-500"
+                    className="text-slate-600 font-semibold transition hover:text-blue-500"
                   >
                     {item}
                   </a>
@@ -126,14 +128,14 @@ export default function Footer() {
               items-center
               gap-2
               rounded-full
-              border
-              border-slate-700
+             bg-pink-500
+
               px-5
               py-3
-              text-slate-300
+              text-white
               transition
-              hover:border-blue-500
-              hover:text-blue-500
+              hover:cursor-pointer
+              hover:text-white
             "
           >
             Back to Top
