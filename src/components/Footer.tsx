@@ -13,25 +13,29 @@ export default function Footer() {
     });
 
   return (
-    <footer className="border-t border-slate-800 bg-slate-950">
+    <footer className="border-t border-slate-100 bg-slate-50">
       <div className="mx-auto max-w-7xl px-6 py-20">
         <div className="grid gap-14 lg:grid-cols-4">
           {/* Brand */}
 
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3">
-              <div className="rounded-xl bg-blue-600 p-3 text-white">
+              <div className="rounded-xl bg-[#f0bb0c] p-3 text-white">
                 <Code2 size={28} />
               </div>
 
               <div>
-                <h2 className="text-2xl font-bold text-white">System Blog</h2>
+                <h2 className="text-2xl font-bold text-green-600">
+                  System Blog
+                </h2>
 
-                <p className="text-slate-400">Software Engineering</p>
+                <p className="text-slate-800 font-semibold">
+                  Software Engineering
+                </p>
               </div>
             </div>
 
-            <p className="mt-8 max-w-lg leading-8 text-slate-400">
+            <p className="mt-8 max-w-lg leading-8 text-slate-600">
               Sharing practical software engineering knowledge through
               tutorials, project breakdowns, backend development, frontend
               engineering, DevOps, TypeScript, React, Docker and much more.
@@ -40,28 +44,28 @@ export default function Footer() {
             <div className="mt-8 flex gap-4">
               <a
                 href="#"
-                className="rounded-xl border border-slate-700 p-3 text-slate-300 transition hover:border-blue-500 hover:text-blue-500"
+                className="rounded-xl border border-pink-500 p-3 text-pink-500 transition hover:border-pink-500 hover:text-pink-500"
               >
                 <Mail size={20} />
               </a>
 
               <a
                 href="#"
-                className="rounded-xl border border-slate-700 p-3 text-slate-300 transition hover:border-blue-500 hover:text-blue-500"
+                className="rounded-xl border border-pink-500 p-3 text-pink-500 transition hover:border-pink-500 hover:text-pink-500"
               >
                 {/* <Linkedin size={20} /> */}
               </a>
 
               <a
                 href="#"
-                className="rounded-xl border border-slate-700 p-3 text-slate-300 transition hover:border-blue-500 hover:text-blue-500"
+                className="rounded-xl border border-pink-500 p-3 text-pink-500 transition hover:border-pink-500 hover:text-pink-500"
               >
                 {/* <Twitter size={20} /> */}
               </a>
 
               <a
                 href="#"
-                className="rounded-xl border border-slate-700 p-3 text-slate-300 transition hover:border-blue-500 hover:text-blue-500"
+                className="rounded-xl border border-pink-500 p-3 text-pink-500 transition hover:border-pink-500 hover:text-pink-500"
               >
                 <Mail size={20} />
               </a>
