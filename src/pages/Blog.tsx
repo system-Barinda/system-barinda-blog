@@ -55,7 +55,7 @@ const Blog = () => {
         <div className="absolute inset-0 -z-10">
           <div className="absolute left-1/2 top-0 h-[500px] w-[700px] -translate-x-1/2 rounded-full bg-blue-600/10 blur-[120px]" />
 
-          <div className="absolute right-0 top-40 h-[300px] w-[300px] rounded-full bg-cyan-500/10 blur-[100px]" />
+          <div className="absolute right-0 top-40 h-75 w-[300px] rounded-full bg-cyan-500/10 blur-[100px]" />
         </div>
 
         <div className="mx-auto max-w-7xl px-4 pb-16 pt-16 sm:px-6 sm:pt-20 lg:px-8 lg:pb-20">
@@ -191,7 +191,7 @@ const Blog = () => {
               </h3>
 
               <p className="mt-5 leading-7 text-slate-400">
-                {featuredPost.excerpt}
+                {featuredPost.description}
               </p>
 
               <button
@@ -275,7 +275,7 @@ const Blog = () => {
                     </h3>
 
                     <p className="mt-3 line-clamp-3 text-sm leading-6 text-slate-400">
-                      {post.excerpt}
+                      {post.description}
                     </p>
 
                     <div className="mt-auto pt-6">
