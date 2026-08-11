@@ -1,15 +1,15 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight } from 'lucide-react'
 
 type Props = {
   post: {
-    title: string;
-    category: string;
-    image: string;
-    description: string;
-    date: string;
-    readTime: string;
-  };
-};
+    title: string
+    category: string
+    image: string
+    description: string
+    date: string
+    readTime: string
+  }
+}
 
 export default function PostCard({ post }: Props) {
   return (
@@ -81,5 +81,5 @@ export default function PostCard({ post }: Props) {
         </button>
       </div>
     </article>
-  );
+  )
 }

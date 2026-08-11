@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState } from 'react'
 import {
   ArrowRight,
   Calendar,
@@ -6,46 +6,46 @@ import {
   Clock3,
   Code2,
   Search,
-} from "lucide-react";
+} from 'lucide-react'
 
-import { posts } from "../data/posts";
+import { posts } from '../data/posts'
 
 const categories = [
-  "All",
-  "JavaScript",
-  "TypeScript",
-  "React",
-  "Node.js",
-  "Backend",
-  "Database",
-  "DevOps",
-  "System Design",
-];
+  'All',
+  'JavaScript',
+  'TypeScript',
+  'React',
+  'Node.js',
+  'Backend',
+  'Database',
+  'DevOps',
+  'System Design',
+]
 
 const Blog = () => {
-  const [selectedCategory, setSelectedCategory] = useState("All");
-  const [search, setSearch] = useState("");
-  const [showAll, setShowAll] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState('All')
+  const [search, setSearch] = useState('')
+  const [showAll, setShowAll] = useState(false)
 
   const filteredPosts = useMemo(() => {
     return posts.filter((post) => {
       const matchesCategory =
-        selectedCategory === "All" || post.category === selectedCategory;
+        selectedCategory === 'All' || post.category === selectedCategory
 
-      const searchValue = search.toLowerCase();
+      const searchValue = search.toLowerCase()
 
       const matchesSearch =
         post.title.toLowerCase().includes(searchValue) ||
         post.description.toLowerCase().includes(searchValue) ||
-        post.category.toLowerCase().includes(searchValue);
+        post.category.toLowerCase().includes(searchValue)
 
-      return matchesCategory && matchesSearch;
-    });
-  }, [selectedCategory, search]);
+      return matchesCategory && matchesSearch
+    })
+  }, [selectedCategory, search])
 
-  const visiblePosts = showAll ? filteredPosts : filteredPosts.slice(0, 6);
+  const visiblePosts = showAll ? filteredPosts : filteredPosts.slice(0, 6)
 
-  const featuredPost = posts[0];
+  const featuredPost = posts[0]
 
   return (
     <main className="min-h-screen bg-slate-950 text-white">
@@ -105,32 +105,32 @@ const Blog = () => {
         <div className="mx-auto max-w-7xl px-4 py-5 sm:px-6 lg:px-8">
           <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-none">
             {categories.map((category) => {
-              const active = selectedCategory === category;
+              const active = selectedCategory === category
 
               return (
                 <button
                   key={category}
                   type="button"
                   onClick={() => {
-                    setSelectedCategory(category);
-                    setShowAll(false);
+                    setSelectedCategory(category)
+                    setShowAll(false)
                   }}
                   className={`whitespace-nowrap rounded-lg px-4 py-2 text-sm font-medium transition ${
                     active
-                      ? "bg-blue-500 text-white shadow-lg shadow-blue-500/20"
-                      : "border border-white/10 bg-white/[0.03] text-slate-400 hover:border-white/20 hover:bg-white/[0.06] hover:text-white"
+                      ? 'bg-blue-500 text-white shadow-lg shadow-blue-500/20'
+                      : 'border border-white/10 bg-white/[0.03] text-slate-400 hover:border-white/20 hover:bg-white/[0.06] hover:text-white'
                   }`}
                 >
                   {category}
                 </button>
-              );
+              )
             })}
           </div>
         </div>
       </section>
 
       {/* Featured article */}
-      {selectedCategory === "All" && !search && featuredPost && (
+      {selectedCategory === 'All' && !search && featuredPost && (
         <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
           <div className="mb-7 flex items-end justify-between gap-4">
             <div>
@@ -221,7 +221,7 @@ const Blog = () => {
 
           <p className="text-sm text-slate-500">
             {filteredPosts.length} article
-            {filteredPosts.length !== 1 ? "s" : ""}
+            {filteredPosts.length !== 1 ? 's' : ''}
           </p>
         </div>
 
@@ -300,10 +300,10 @@ const Blog = () => {
                   onClick={() => setShowAll((current) => !current)}
                   className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] px-5 py-3 text-sm font-semibold text-slate-300 transition hover:border-blue-500/30 hover:bg-white/[0.07] hover:text-white"
                 >
-                  {showAll ? "Show less" : "Load more articles"}
+                  {showAll ? 'Show less' : 'Load more articles'}
                   <ChevronDown
                     size={17}
-                    className={showAll ? "rotate-180" : ""}
+                    className={showAll ? 'rotate-180' : ''}
                   />
                 </button>
               </div>
@@ -323,8 +323,8 @@ const Blog = () => {
             <button
               type="button"
               onClick={() => {
-                setSearch("");
-                setSelectedCategory("All");
+                setSearch('')
+                setSelectedCategory('All')
               }}
               className="mt-6 text-sm font-semibold text-blue-400 hover:text-blue-300"
             >
@@ -373,7 +373,7 @@ const Blog = () => {
         </div>
       </section>
     </main>
-  );
-};
+  )
+}
 
-export default Blog;
+export default Blog

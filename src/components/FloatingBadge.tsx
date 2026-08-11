@@ -1,10 +1,8 @@
 type FloatingBadgeProps = {
-  title: string;
-};
+  title: string
+}
 
-export default function FloatingBadge({
-  title,
-}: FloatingBadgeProps) {
+export default function FloatingBadge({ title }: FloatingBadgeProps) {
   return (
     <div
       className="
@@ -25,5 +23,5 @@ export default function FloatingBadge({
     >
       {title}
     </div>
-  );
+  )
 }

@@ -1,16 +1,16 @@
-import { ArrowUp, Code2, Mail } from "lucide-react";
+import { ArrowUp, Code2, Mail } from 'lucide-react'
 // import { ArrowUp, Code2, Github, Linkedin, Mail, Twitter } from "lucide-react";
 
-const quickLinks = ["Home", "Blog", "Projects", "About"];
+const quickLinks = ['Home', 'Blog', 'Projects', 'About']
 
-const categories = ["Frontend", "Backend", "DevOps", "Databases"];
+const categories = ['Frontend', 'Backend', 'DevOps', 'Databases']
 
 export default function Footer() {
   const scrollToTop = () =>
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
-    });
+      behavior: 'smooth',
+    })
 
   return (
     <footer className="border-t border-slate-100 bg-slate-50">
@@ -144,5 +144,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  );
+  )
 }

@@ -1,5 +1,5 @@
-import CategoryCard from "./CategoryCard";
-import { categories } from "../data/categories";
+import CategoryCard from './CategoryCard'
+import { categories } from '../data/categories'
 
 export default function Categories() {
   return (
@@ -26,5 +26,5 @@ export default function Categories() {
         </div>
       </div>
     </section>
-  );
+  )
 }

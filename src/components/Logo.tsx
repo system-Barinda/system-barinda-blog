@@ -1,4 +1,4 @@
-import { Code2 } from "lucide-react";
+import { Code2 } from 'lucide-react'
 
 export default function Logo() {
   return (
@@ -15,5 +15,5 @@ export default function Logo() {
         <p className="text-xs text-slate-100">Software Engineering</p>
       </div>
     </div>
-  );
+  )
 }

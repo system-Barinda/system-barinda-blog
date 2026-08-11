@@ -1,13 +1,13 @@
-import { ArrowRight, ExternalLink, Star } from "lucide-react";
+import { ArrowRight, ExternalLink, Star } from 'lucide-react'
 
 const technologies = [
-  "React",
-  "TypeScript",
-  "TailwindCSS",
-  "Node.js",
-  "PostgreSQL",
-  "Docker",
-];
+  'React',
+  'TypeScript',
+  'TailwindCSS',
+  'Node.js',
+  'PostgreSQL',
+  'Docker',
+]
 
 export default function FeaturedProject() {
   return (
@@ -171,5 +171,5 @@ export default function FeaturedProject() {
         </div>
       </div>
     </section>
-  );
+  )
 }

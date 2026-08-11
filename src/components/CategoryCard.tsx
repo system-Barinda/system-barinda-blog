@@ -1,16 +1,16 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight } from 'lucide-react'
 
 type Props = {
   category: {
-    title: string;
-    description: string;
-    articles: number;
-    icon: React.ElementType;
-  };
-};
+    title: string
+    description: string
+    articles: number
+    icon: React.ElementType
+  }
+}
 
 export default function CategoryCard({ category }: Props) {
-  const Icon = category.icon;
+  const Icon = category.icon
 
   return (
     <div
@@ -60,5 +60,5 @@ export default function CategoryCard({ category }: Props) {
         />
       </div>
     </div>
-  );
+  )
 }

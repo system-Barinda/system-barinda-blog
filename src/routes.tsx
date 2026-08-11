@@ -1,17 +1,17 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter } from 'react-router-dom'
 
-import MainLayout from "./layouts/MainLayout";
-import Home from "./pages/Home";
+import MainLayout from './layouts/MainLayout'
+import Home from './pages/Home'
 
 const EmptyPage = ({ title }: { title: string }) => (
   <section className="flex h-[80vh] items-center justify-center">
     <h1 className="text-5xl font-bold text-white">{title}</h1>
   </section>
-);
+)
 
 export const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <MainLayout />,
     children: [
       {
@@ -19,21 +19,21 @@ export const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "blog",
+        path: 'blog',
         element: <EmptyPage title="Blog" />,
       },
       {
-        path: "projects",
+        path: 'projects',
         element: <EmptyPage title="Projects" />,
       },
       {
-        path: "about",
+        path: 'about',
         element: <EmptyPage title="About" />,
       },
       {
-        path: "contact",
+        path: 'contact',
         element: <EmptyPage title="Contact" />,
       },
     ],
   },
-]);
+])

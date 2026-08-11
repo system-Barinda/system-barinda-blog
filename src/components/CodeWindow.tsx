@@ -50,5 +50,5 @@ export default developer;`}
         </div>
       </div>
     </div>
-  );
+  )
 }

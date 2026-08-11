@@ -1,20 +1,20 @@
-import { useRef } from "react";
-import { ArrowRight } from "lucide-react";
-import FloatingBadge from "./FloatingBadge";
-import HeroBackground from "./HeroBackground";
-import CodeWindow from "./CodeWindow";
+import { useRef } from 'react'
+import { ArrowRight } from 'lucide-react'
+import FloatingBadge from './FloatingBadge'
+import HeroBackground from './HeroBackground'
+import CodeWindow from './CodeWindow'
 
 const skills = [
-  "React",
-  "TypeScript",
-  "Node.js",
-  "Docker",
-  "PostgreSQL",
-  "TailwindCSS",
-];
+  'React',
+  'TypeScript',
+  'Node.js',
+  'Docker',
+  'PostgreSQL',
+  'TailwindCSS',
+]
 
 export default function Hero() {
-  const cardRef = useRef<HTMLDivElement | null>(null);
+  const cardRef = useRef<HTMLDivElement | null>(null)
 
   return (
     <section className="relative overflow-hidden bg-gray-200">
@@ -74,5 +74,5 @@ export default function Hero() {
         </div>
       </div>
     </section>
-  );
+  )
 }

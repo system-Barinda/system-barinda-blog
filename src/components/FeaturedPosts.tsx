@@ -1,5 +1,5 @@
-import PostCard from "./PostCard";
-import { posts } from "../data/posts";
+import PostCard from './PostCard'
+import { posts } from '../data/posts'
 
 export default function FeaturedPosts() {
   return (
@@ -35,5 +35,5 @@ export default function FeaturedPosts() {
         </div>
       </div>
     </section>
-  );
+  )
 }
