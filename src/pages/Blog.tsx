@@ -36,7 +36,7 @@ const Blog = () => {
 
       const matchesSearch =
         post.title.toLowerCase().includes(searchValue) ||
-        post.excerpt.toLowerCase().includes(searchValue) ||
+        post.description.toLowerCase().includes(searchValue) ||
         post.category.toLowerCase().includes(searchValue);
 
       return matchesCategory && matchesSearch;

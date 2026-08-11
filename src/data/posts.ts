@@ -10,7 +10,6 @@ export const posts = [
     date: "July 20, 2026",
     readTime: "8 min read",
   },
-
   {
     id: 2,
     title: "Understanding Docker for Beginners",
@@ -21,7 +20,6 @@ export const posts = [
     date: "July 24, 2026",
     readTime: "10 min read",
   },
-
   {
     id: 3,
     title: "Mastering PostgreSQL Queries",
